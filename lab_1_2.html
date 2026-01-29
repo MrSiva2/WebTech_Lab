@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siva Sanjay | Portfolio</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    section.alt {
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    p.section-intro {
+      text-align: center;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1rem 0;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #0066ff;
+    }
+
+    /* Hero */
+    header.hero {
+      padding: 6rem 0 5rem;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: #555;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: #0066ff;
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover {
+      background: #0052cc;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Services */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid #eee;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    .portfolio-item img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .portfolio-item h4 {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* Contact */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.9rem;
+      font-family: inherit;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #0066ff;
+    }
+
+    input[type="submit"] {
+      width: fit-content;
+      background: #0066ff;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    input[type="submit"]:hover {
+      background: #0052cc;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#top">Top</a>
+      <a href="#work">Work</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="container hero-inner">
+      <img src="https://picsum.photos/300" alt="Jane Doe" />
+      <div>
+        <h1>Hi. I’m Siva Sanjay.</h1>
+        <p>
+          I’m a designer and front-end developer creating clean, usable, and thoughtful digital experiences.
+        </p>
+        <a href="#work" class="button">What I do</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="work" class="alt">
+    <div class="container">
+      <h2>What I do</h2>
+      <p class="section-intro">Design, development, and creative problem-solving.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>UI / UX Design</h3>
+          <p>Designing intuitive interfaces with clear hierarchy and polished interactions.</p>
+        </div>
+        <div class="card">
+          <h3>Front-End Development</h3>
+          <p>Building responsive, accessible websites with modern HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="card">
+          <h3>Creative Strategy</h3>
+          <p>Turning ideas into focused digital products through research and iteration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2>Recent work</h2>
+      <p class="section-intro">A small selection of projects I’ve worked on recently.</p>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/400?1" alt="Project 1" />
+          <h4>Product Landing Page</h4>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/400?2" alt="Project 2" />
+          <h4>SaaS Dashboard UI</h4>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/400?3" alt="Project 3" />
+          <h4>Creative Portfolio</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="container">
+      <h2>Get in touch</h2>
+      <p class="section-intro">Have a project or idea? Let’s talk.</p>
+
+      <form>
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Your email" required />
+        <textarea rows="5" placeholder="Your message" required></textarea>
+        <input type="submit" value="Send message" />
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Jane Doe. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

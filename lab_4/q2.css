@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+#dragitem2{
+    width: 120px;
+    height: 120px;
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
+
+#dragItem {
+    width: 120px;
+    height: 120px;
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
+
+#dropZone {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

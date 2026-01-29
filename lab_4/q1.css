@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Grid container */
+.pattern {
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    grid-template-rows: repeat(5, 60px);
+    gap: 5px;
+}
+
+/* Common box style */
+.box {
+    width: 60px;
+    height: 60px;
+}
+
+/* Colors */
+.c1 {
+    background-color: #ff7a00;   /* bright orange */
+}
+
+.c2 {
+    background-color: #ffb87a;   /* light orange */
+}
+
+.c3 {
+    background-color: #a54a00;   /* dark brown-orange */
+}
