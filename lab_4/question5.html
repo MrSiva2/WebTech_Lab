@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Income Tax Calculator</title>
+    <link rel="stylesheet" href="q5.css">
+</head>
+<body>
+
+<div class="tax-box">
+    <h2>Income Tax Calculator</h2>
+
+    <label>Annual Income (₹)</label>
+    <input type="number" id="income" placeholder="Enter income">
+
+    <label>Age Group</label>
+    <select id="age">
+        <option value="normal">Below 60</option>
+        <option value="senior">60 - 80</option>
+        <option value="super">Above 80</option>
+    </select>
+
+    <button onclick="calculateTax()">Calculate Tax</button>
+
+    <div class="result">
+        <p>Income Tax: ₹ <span id="tax"></span></p>
+        <p>Cess (4%): ₹ <span id="cess"></span></p>
+        <p><b>Total Payable: ₹ <span id="total"></span></b></p>
+    </div>
+</div>
+
+<script src="q5.js"></script>
+</body>
+</html>
